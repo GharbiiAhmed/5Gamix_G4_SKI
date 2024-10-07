@@ -5,7 +5,7 @@ pipeline {
         stage('Main') {
             steps {
                 // Compile the Spring Boot project
-                echo "Echo Test of Rayen Branch"
+                echo "Echo Test of Ahmed Branch"
             }
         }
 
@@ -18,6 +18,15 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
+
+        stage('MVN SonarQube') {
+            steps {
+                    withSonarQubeEnv('Sonarqube') {
+                        sh 'mvn sonar:sonar'
+                    }
+                }
+        }
+        
 
 
     }
