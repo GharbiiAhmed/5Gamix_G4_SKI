@@ -19,13 +19,13 @@ pipeline {
             }
         }
 
-        // stage('MVN SonarQube') {
-        //     steps {
-        //             withSonarQubeEnv('Sonarqube') {
-        //                 sh 'mvn sonar:sonar'
-        //             }
-        //         }
-        // }
+        stage('MVN SonarQube') {
+            steps {
+                    withSonarQubeEnv('Sonarqube') {
+                        sh 'mvn sonar:sonar'
+                    }
+                }
+        }
         
 
 
